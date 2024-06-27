@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  {% if cssfile %}
+    <link rel="stylesheet" href="/theme/css/{{ cssfile }}">
+  {% else %}
+    <link rel="stylesheet" href="/theme/css/pages.css">
+  {% endif %}
+
+  <title>homepage</title>
+
+</head>
+
+  <body>
+    <header>
+      <a href="/">home</a>
+      {% for p in pages %}
+	<a href="/{{ p.url }}" {% if p==page %} aria-current="page" {% endif %}>{{ p.slug }}</a>
+      {% endfor %}
+      <a href="/archives.html">blog</a>
+    </header>
+    <!-- <button class="toggle_header" onclick="toggle_header()"></button> -->
+
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    <footer>
+      <p>Made with  &nbsp;by hv</p>
+      <p>Wanna get in touch? <a href='mailto:hvstuff4@proton.me'>shoot me an email</a></p>
+    </footer>
+
+  </body>
+</html>
