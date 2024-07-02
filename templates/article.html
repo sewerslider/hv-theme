@@ -1,1 +1,19 @@
-{% extends "page.html" %}
+{% extends "base.html" %}
+
+{% block title %}{{ SITENAME|striptags }} - {{ article.title|striptags }}{%endblock%}
+
+{% block content %}
+
+  <article>
+    <h2>{{ article.title }}</h2>
+
+    {{ article.content }}
+  </article>
+
+  {% if article.modified %}
+        <p>
+          Last updated: {{ article.modified }}
+        </p>
+  {% endif %}
+
+{% endblock %}
