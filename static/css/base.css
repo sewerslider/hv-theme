@@ -30,6 +30,10 @@ a {
   text-decoration: none;
 }
 
+hr {
+  color: var(--text);
+}
+
 h1 {
   font-size: 3rem;
 }
