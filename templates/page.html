@@ -3,9 +3,17 @@
 {% block title %}{{ SITENAME|striptags }} - {{ page.title|striptags }}{%endblock%}
 
 {% block content %}
+
   <article>
     <h2>{{ page.title }}</h2>
 
     {{ page.content }}
   </article>
+
+  {% if page.modified %}
+        <p>
+          Last updated: {{ page.modified }}
+        </p>
+  {% endif %}
+
 {% endblock %}
