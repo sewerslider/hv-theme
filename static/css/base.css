@@ -5,11 +5,11 @@
   --link: #FF686B;
   --bg:   #241E4E;
   --nonimp: #2b2462;
+  --warning: #FFFBBD;
 }
 
 html {
   font-family: "FiraCode Nerd Font", monospace;
-  font-size: 20px;
   height: 100vh;
   margin: 0;
 }
@@ -27,30 +27,21 @@ body {
 a {
   color: var(--link); 
   font-weight: bold;
-  text-decoration: none;
+}
+
+em {
+  color: var(--warning);
 }
 
 hr {
   color: var(--text);
 }
 
-h1 {
-  font-size: 3rem;
+.highlight pre {
+  background: var(--nonimp)
 }
 
-h2 {
-  font-size: 2.5rem;
-}
-
-h3 {
-  font-size: 2.5rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-}
-
-header {
+#header {
   display: flex;
   gap: 30px;
   flex-direction: row;
@@ -59,21 +50,26 @@ header {
   padding: 20px 0;
   width: 100%;
 
-/* value for header as body's flex item */
-  margin-bottom: auto;
-
   background: var(--nonimp);
 }
 
 #content {
-  margin: 50px 5px;
-  padding: 0 10px;
-
+  margin: 10px 5px;
 }
 
-footer {
+#footer {
   font-size: 0.5rem;
   text-align: center;
 
   margin-top: auto;
+}
+
+.toc {
+  margin: 0 40px;
+  border: 2px solid var(--text);
+  padding: 10px 10px;
+}
+
+.toc ul {
+  list-style-type: none;
 }
